@@ -6,6 +6,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
 
 public class pices {
 
@@ -28,15 +29,13 @@ public class pices {
     public BufferedImage getImage(String imagePath) {
         BufferedImage image = null;
         try {
-            // Check if resource stream is null before attempting to read the image
             if (getClass().getResourceAsStream(imagePath) != null) {
-                image = ImageIO.read(getClass().getResourceAsStream(imagePath));
+                image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
             } else {
                 System.err.println("Image resource not found: " + imagePath);
             }
         } catch(IOException e) {
             e.printStackTrace();
-            // Handle the exception gracefully, e.g., show an error message or log the error.
         }
         return image;
     }
@@ -49,10 +48,10 @@ public class pices {
         return row * ChessBoard.SQUARE_SIZE;
     }
     public int getCol(int x){
-        return (x + ChessBoard.HalfSquareSize/ChessBoard.SQUARE_SIZE);
+        return (x);
     }
     public int getRow(int y) {
-        return (y + ChessBoard.HalfSquareSize / ChessBoard.SQUARE_SIZE);
+        return (y);
     }
     public void updatePosition(){
 

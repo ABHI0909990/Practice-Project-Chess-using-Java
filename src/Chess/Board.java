@@ -41,15 +41,6 @@ public class Board extends JPanel implements Runnable {
         gameThread.start();
     }
 
-    public pices getPieces(int col , int row){
-        for(pices piece : pieces){
-            if(piece.col == col && piece.row == row){
-                return piece;
-            }
-        }
-
-        return null;
-   }
 
     public void setPieces(){
 
