@@ -3,8 +3,12 @@ package Chess;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 
-public class Mouse extends MouseAdapter {
+
+public class Mouse extends MouseAdapter implements MouseMotionListener {
 
     public int x,y;
     public boolean Pressed;
@@ -12,6 +16,7 @@ public class Mouse extends MouseAdapter {
     @Override
     public void mousePressed(MouseEvent e) {
         Pressed = true;
+
 
     }
 
