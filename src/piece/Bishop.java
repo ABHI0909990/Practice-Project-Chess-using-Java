@@ -18,11 +18,9 @@ public class Bishop extends pices{
     }
     public boolean ismove(int Targetcol, int Targetrow) {
 
-        if (isWithinBoard(Targetcol, Targetrow) && !isSameS(Targetcol, Targetrow)){
+        if (isWithinBoard(Targetcol, Targetrow) && isSameS(Targetcol, Targetrow)){
             if (Math.abs(Targetcol - precol) == Math.abs(Targetrow - prerow)) {
-                if(isValidS(Targetcol,Targetrow) && !isDiagonalLineP(Targetcol, Targetrow)){
-                    return true;
-                }
+                return isValidS(Targetcol, Targetrow) && isDiagonalLineP(Targetcol, Targetrow);
 
             }
         }

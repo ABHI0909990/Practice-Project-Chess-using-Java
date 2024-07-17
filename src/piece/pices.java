@@ -89,10 +89,7 @@ public class pices {
         return Targetcol >= 0 && Targetcol <= 7 && Targetrow >= 0 && Targetrow <= 7;
     }
     public boolean isSameS(int Targetcol,int Targetrow){
-        if(Targetcol == precol && Targetrow == prerow){
-            return true;
-        }
-        return false;
+        return Targetcol != precol || Targetrow != prerow;
     }
     public pices iscaptureP(int Targetcol, int Targetrow){
 
@@ -126,7 +123,7 @@ public class pices {
             for(pices Pieces : Board.simPieces){
                 if(Pieces.col == c && Pieces.row == Targetrow){
                     hitP = Pieces;
-                    return true;
+                    return false;
                 }
             }
         }
@@ -136,7 +133,7 @@ public class pices {
             for(pices Pieces : Board.simPieces){
                 if(Pieces.col == c && Pieces.row == Targetrow){
                     hitP = Pieces;
-                    return true;
+                    return false;
                 }
             }
         }
@@ -145,7 +142,7 @@ public class pices {
             for(pices Pieces : Board.simPieces){
                 if(Pieces.col == Targetcol && Pieces.row == r){
                     hitP = Pieces;
-                    return true;
+                    return false;
                 }
             }
         }
@@ -154,11 +151,11 @@ public class pices {
             for(pices Pieces : Board.simPieces){
                 if(Pieces.col == Targetcol && Pieces.row == r){
                     hitP = Pieces;
-                    return true;
+                    return false;
                 }
             }
         }
-        return false;
+        return true;
     }
     public boolean isDiagonalLineP(int Targetcol , int Targetrow){
 
@@ -170,7 +167,7 @@ public class pices {
                 for(pices Pieces : Board.simPieces){
                     if(Pieces.col == c && Pieces.row == prerow - diff){
                         hitP = Pieces;
-                        return true;
+                        return false;
                     }
                 }
             }
@@ -180,7 +177,7 @@ public class pices {
                 for(pices Pieces : Board.simPieces){
                     if(Pieces.col == c && Pieces.row == prerow - diff){
                         hitP = Pieces;
-                        return true;
+                        return false;
                     }
                 }
             }
@@ -193,7 +190,7 @@ public class pices {
                 for(pices Pieces : Board.simPieces){
                     if(Pieces.col == c && Pieces.row == prerow + diff){
                         hitP = Pieces;
-                        return true;
+                        return false;
                     }
                 }
             }
@@ -203,12 +200,12 @@ public class pices {
                 for(pices Pieces : Board.simPieces){
                     if(Pieces.col == c && Pieces.row == prerow + diff){
                         hitP = Pieces;
-                        return true;
+                        return false;
                     }
                 }
             }
         }
-        return false;
+        return true;
     }
     public void resetP(){
         col = precol;

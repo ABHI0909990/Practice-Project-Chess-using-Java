@@ -32,7 +32,7 @@ public class King extends pices{
             if (!MovedP) {
 
                 //Right
-                if (Targetcol == precol + 2 && Targetrow == prerow && !isStraightLineP(Targetcol, Targetrow)) {
+                if (Targetcol == precol + 2 && Targetrow == prerow && isStraightLineP(Targetcol, Targetrow)) {
                     for (pices Pieces : Board.simPieces) {
                         if (Pieces.col == precol + 3 && Pieces.row == prerow && !Pieces.MovedP) {
                             Board.Castling = Pieces;
@@ -42,7 +42,7 @@ public class King extends pices{
                 }
 
                 //Left
-                if(Targetcol == precol - 2 && Targetrow == prerow && !isStraightLineP(Targetcol, Targetrow)) {
+                if(Targetcol == precol - 2 && Targetrow == prerow && isStraightLineP(Targetcol, Targetrow)) {
                     pices[] p = new pices[2];
                     for (pices Pieces : Board.simPieces) {
 

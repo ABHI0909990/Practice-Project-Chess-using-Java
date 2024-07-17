@@ -18,7 +18,7 @@ public class pawn extends pices{
     }
     public boolean ismove(int Targetcol,int Targetrow){
 
-        if(isWithinBoard(Targetcol,Targetrow) && !isSameS(Targetcol, Targetrow)){
+        if(isWithinBoard(Targetcol,Targetrow) && isSameS(Targetcol, Targetrow)){
 
             int MoveV;
             if(color == Board.WHITE){
@@ -38,7 +38,7 @@ public class pawn extends pices{
                 return true;
             }
 
-            if(Targetcol == precol && Targetrow == prerow + MoveV * 2 && hitP == null && !MovedP && !isStraightLineP(Targetcol, Targetrow)){
+            if(Targetcol == precol && Targetrow == prerow + MoveV * 2 && hitP == null && !MovedP && isStraightLineP(Targetcol, Targetrow)){
                 return true;
             }
             if(Math.abs(Targetcol - precol) == 1 && Targetrow == prerow + MoveV){

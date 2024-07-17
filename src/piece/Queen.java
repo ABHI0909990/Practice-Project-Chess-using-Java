@@ -19,19 +19,17 @@ public class Queen extends pices{
     public boolean ismove(int Targetcol, int Targetrow) {
 
         //Rook
-        if (isWithinBoard(Targetcol, Targetrow) && !isSameS(Targetcol, Targetrow)){
+        if (isWithinBoard(Targetcol, Targetrow) && isSameS(Targetcol, Targetrow)){
             if (Targetcol == precol || Targetrow == prerow) {
-                if(isValidS(Targetcol,Targetrow) && !isStraightLineP(Targetcol, Targetrow)){
+                if(isValidS(Targetcol,Targetrow) && isStraightLineP(Targetcol, Targetrow)){
                     return true;
                 }
             }
         }
         //Bishop
-        if (isWithinBoard(Targetcol, Targetrow) && !isSameS(Targetcol, Targetrow)){
+        if (isWithinBoard(Targetcol, Targetrow) && isSameS(Targetcol, Targetrow)){
             if (Math.abs(Targetcol - precol) == Math.abs(Targetrow - prerow)) {
-                if(isValidS(Targetcol,Targetrow) && !isDiagonalLineP(Targetcol, Targetrow)){
-                    return true;
-                }
+                return isValidS(Targetcol, Targetrow) && isDiagonalLineP(Targetcol, Targetrow);
 
             }
         }

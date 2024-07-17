@@ -19,11 +19,9 @@ public class Rook extends pices{
     }
     public boolean ismove(int Targetcol, int Targetrow) {
 
-        if (isWithinBoard(Targetcol, Targetrow) && !isSameS(Targetcol, Targetrow)){
+        if (isWithinBoard(Targetcol, Targetrow) && isSameS(Targetcol, Targetrow)){
             if (Targetcol == precol || Targetrow == prerow) {
-                if(isValidS(Targetcol,Targetrow) && !isStraightLineP(Targetcol, Targetrow)){
-                    return true;
-                }
+                return isValidS(Targetcol, Targetrow) && isStraightLineP(Targetcol, Targetrow);
             }
         }
         return false;

@@ -7,7 +7,7 @@ public class ChessBoard {
     final int MAX_ROW = 8;
     final int MAX_COL = 8;
     public static final int SQUARE_SIZE = 85;
-    public static final int HalfSquareSize = SQUARE_SIZE / 2;;
+    public static final int HalfSquareSize = SQUARE_SIZE / 2;
 
 
     public void draw(Graphics2D g2) {

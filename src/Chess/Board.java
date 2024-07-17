@@ -41,8 +41,8 @@ public class Board extends JPanel implements Runnable {
         addMouseListener(mouse);
 
         //testPromotion();
-        //setPieces();
-        testIllegal();
+        setPieces();
+        //testIllegal();
         copyPieces(pieces,simPieces);
 
     }
@@ -99,13 +99,13 @@ public class Board extends JPanel implements Runnable {
         pieces.add(new pawn(BLACK,5,6));
     }*/
 
-    public void testIllegal(){
+    /*public void testIllegal(){
         pieces.add(new King(WHITE,3,7));
         pieces.add(new pawn(WHITE,7,6));
         pieces.add(new King(BLACK,0,3));
         pieces.add(new Bishop(BLACK,1,4));
         pieces.add(new Queen(BLACK,4,5));
-    }
+    }*/
     private void copyPieces (ArrayList<pices> source,ArrayList<pices> target){
 
         target.clear();
