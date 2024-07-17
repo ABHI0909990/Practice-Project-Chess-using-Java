@@ -564,8 +564,7 @@ public class Board extends JPanel implements Runnable {
                 }
             }
             if(EndGame){
-                String a;
-                a = "";
+                String a ;
                 if(currentColor == WHITE){
                     a = "White is Won This Game";
                 }
